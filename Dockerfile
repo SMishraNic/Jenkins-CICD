@@ -9,7 +9,7 @@ ADD https://www.tooplate.com/download/2156_graphite_creative /var/www/html/
 
 WORKDIR /var/www/html
 
-RUN unzip 2156_graphite_creative.zip && \
+RUN unzip 2156_graphite_creative && \
     cp -rvf 2156_graphite_creative/* . && \
     rm -rf 2156_graphite_creative 2156_graphite_creative.zip
 
