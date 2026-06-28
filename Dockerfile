@@ -5,13 +5,11 @@ MAINTAINER sunil@gmail.com
 RUN yum install -y httpd zip unzip && \
     yum clean all
 
-ADD https://www.tooplate.com/download/2156_graphite_creative /var/www/html/
-
 WORKDIR /var/www/html
 
-RUN unzip 2156_graphite_creative.zip && \
+RUN curl -L -o graphite.zip https://www.tooplate.com/download/2156_graphite_creative && \
+    unzip graphite.zip && \
     cp -rvf 2156_graphite_creative/* . && \
-    rm -rf 2156_graphite_creative.zip
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+    rm -rf graphite.zip 2156_graphite_creative
 
 EXPOSE 80
