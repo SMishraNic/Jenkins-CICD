@@ -5,7 +5,7 @@ MAINTAINER sunil@gmail.com
 RUN yum install -y httpd zip unzip && \
     yum clean all
 
-ADD https://www.tooplate.com/download/2156_graphite_creative.zip /var/www/html/
+ADD https://www.tooplate.com/download/2156_graphite_creative /var/www/html/
 
 WORKDIR /var/www/html
 
