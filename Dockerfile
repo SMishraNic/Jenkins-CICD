@@ -11,8 +11,7 @@ WORKDIR /var/www/html
 
 RUN unzip 2156_graphite_creative && \
     cp -rvf 2156_graphite_creative/* . && \
-    rm -rf 2156_graphite_creative 2156_graphite_creative.zip
-
+    rm -rf 2156_graphite_creative 2156_graphite_creative
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 
 EXPOSE 80
