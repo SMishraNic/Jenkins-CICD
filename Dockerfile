@@ -1,8 +1,8 @@
 FROM quay.io/centos/centos:stream9
 
-MAINTAINER sunil@gmail.com
+LABEL maintainer="sunil@gmail.com"
 
-RUN yum install -y httpd zip unzip && \
+RUN yum install -y httpd zip unzip curl && \
     yum clean all
 
 WORKDIR /var/www/html
@@ -13,3 +13,5 @@ RUN curl -L -o graphite.zip https://www.tooplate.com/download/2156_graphite_crea
     rm -rf graphite.zip 2156_graphite_creative
 
 EXPOSE 80
+
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
