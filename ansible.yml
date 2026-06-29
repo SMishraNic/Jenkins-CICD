@@ -1,10 +1,11 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
   become: true
 
   tasks:
-    - name: Create new deployment
+    - name: Create Deployment
       command: kubectl apply -f /home/ubuntu/Deployment.yml
 
-    - name: Create new service
+    - name: Create Service
       command: kubectl apply -f /home/ubuntu/service.yml
