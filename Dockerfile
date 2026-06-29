@@ -2,7 +2,7 @@ FROM quay.io/centos/centos:stream9
 
 LABEL maintainer="sunil@gmail.com"
 
-RUN yum install -y httpd zip unzip curl && \
+RUN yum install -y httpd zip unzip  && \
     yum clean all
 
 WORKDIR /var/www/html
