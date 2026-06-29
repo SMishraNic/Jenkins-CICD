@@ -1,20 +1,26 @@
+---
+apiVersion: apps/v1
 kind: Deployment
-apiversion: apps/v1
+
 metadata:
-   name:Devops-Project1
+  name: devops-project1
+
 spec:
-   replicas: 2
-   selector:    #tell the controller which pods to watch/belongs to
-   matchLables:
-    app: Devops-Project1
-template: 
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: Devops-Project1
+
+  template:
     metadata:
       labels:
-        apps:Devops-Project1
+        app: Devops-Project1
+
     spec:
-     containers:
-      - name: Devops-Project1
-        image: smishra1nic/pipeline-demo
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+      containers:
+        - name: devops-project1
+          image: smishra1nic/pipeline-demo
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
